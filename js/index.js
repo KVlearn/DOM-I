@@ -54,7 +54,16 @@ console.log(document);
 
 //select h1 tag and assign textContent 
 let h1=document.querySelector('h1');
-h1.textContent= siteContent.cta.h1;
+// h1.textContent= siteContent.cta.h1;
+//split by space
+h1.textContent = 'Dom';
+let secondh1 = document.createElement('h1');
+secondh1.textContent = 'is';
+h1.appendChild(secondh1);
+
+let thirdh1 = document.createElement('h1');
+thirdh1.textContent = 'Awesome';
+h1.appendChild(thirdh1);
 
 //select button in cta-text class
 let startButton=document.querySelector('.cta-text button');
@@ -113,5 +122,22 @@ contactp[2].textContent=siteContent.contact.email;
 let footerp=document.querySelector('footer p');
 footerp.textContent=siteContent.footer.copyright;
 
+// Change the color of the navigation text to be green.
+navItem.forEach((item)=>{
+  item.style.color="green";
+})
+// Utilize `.appendChild()` and `.prepend()` to add two new items to the navigation system. You can call them whatever you want.
+const newelement1=document.createElement('a');
+newelement1.textContent="Goals";
+newelement1.style.color="green";
 
+const newelement2=document.createElement('a');
+newelement2.textContent="Home";
+newelement2.style.color="green";
+
+/*select nav */ 
+const nav=document.querySelector('nav');
+nav.appendChild(newelement1);
+/* Added as the first nav element */
+nav.prepend(newelement2);
 
