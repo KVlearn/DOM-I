@@ -26,6 +26,7 @@ start.onclick = startTimer;
 reset.onclick = resetTimer;
 let timer;
 function startTimer(){
+    // digits.classList.add('yellowDigit');
 timer = setInterval(runTimer,10) /*perform runTimer function at interval of every 10ms*/
 }
 
@@ -37,23 +38,25 @@ function resetTimer(){
     countermsec = 0;
     countersec=0;
     maxsec=0;
+    digits.classList.add('yellowDigit');
+    start.disabled =false;
 }
 
 /*Note,second parameter is in millisecond (ie 1s=1000ms)*/
 
 function runTimer (){
-/*increment millisecond Tens */
-msTens.innerHTML++;
+
+msTens.innerHTML++;/*increment millisecond Tens for every 10ms (every call)*/
 countermsec++;/* two counters, one for millisecond, another for second, note 1000ms is one second, here we increment interval by 10ms, so when the counter hits 100, we have incremented 1second */
 countersec++;
 
-if (countermsec ===10){ /* when millisec reaches 10 */
+if (countermsec ===10){ /* when millisec reaches 10 ie 100ms increase mshundreds */
 msHundreds.innerHTML++;
 msTens.innerHTML = 0;
 countermsec =0;
 }
-if( countersec===100){ /* when second reaches 100 ie 10 times 10ms is done*/
-secondOnes.innerHTML ++;
+if( countersec===100){ /* when second reaches 100 ie 10 times 10ms : 1000ms is done*/
+secondOnes.innerHTML ++; /*increase ones in second */
 msHundreds.innerHTML = 0;
 countersec=0;
 maxsec++;
@@ -63,7 +66,10 @@ if(maxsec === 10){
     secondTens.innerHTML =1;
     secondOnes.innerHTML =0;
     clearInterval(timer);
+    digits.classList.remove('yellowDigit');
     digits.classList.add('redDigit');
+    /*disable start button*/
+    start.disabled =true;
 }
 }
     
