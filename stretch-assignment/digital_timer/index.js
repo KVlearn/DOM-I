@@ -10,6 +10,10 @@ const secondTens = document.getElementById("secondTens"); /* when secondTens ===
 const secondOnes = document.getElementById("secondOnes"); /* when secondOnes ===0, increment secondTens */
 const msHundreds = document.getElementById("msHundreds"); /* when msHundreds ===0, increment secondOnes. */
 const msTens = document.getElementById("msTens"); /* when msTens ===0,increment msHundreds, and set msTens=0? */
+const buttons=document.querySelectorAll('button')
+const start = buttons[0];
+const reset = buttons[1];
+
 let  countermsec = 0;
 let  countersec=0;
 let  maxsec=0;
@@ -18,8 +22,19 @@ secondTens.textContent='0';/*assign as string, as its a const*/
 secondOnes.textContent='0';
 msHundreds.textContent='0';
 msTens.textContent='0';
+start.onclick = startTimer;
+reset.onclick = resetTimer;
+var timer;
+function startTimer(){
+timer = setInterval(runTimer,10) /*perform runTimer function at interval of every 10ms*/
+}
 
-let timer = setInterval(runTimer,10) /*perform runTimer function at interval of every 10ms*/
+function resetTimer(){
+    secondTens.innerText="-"; /*assign as string, as its a const*/
+    secondOnes.innerText="-";
+    msHundreds.innerText="-";
+    msTens.innerText="-";
+}
 
 /*Note,second parameter is in millisecond (ie 1s=1000ms)*/
 
