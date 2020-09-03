@@ -1,7 +1,9 @@
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: darkcyan;
 }
 
 .digit {
@@ -11,4 +13,23 @@ body {
 
 .redDigit {
   color: red;
+}
+
+.yellowDigit{
+  color:lightgoldenrodyellow;
+}
+
+button{
+  display: inline-block;
+  background-color: whitesmoke;
+  color:seagreen;
+  background-color: lightgoldenrodyellow;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 10%;
+}
+ 
+button:disabled {
+  color:grey;
+background-color: tan;
 }

@@ -40,3 +40,104 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// select nav bars anchor tag list
+let navItem=document.querySelectorAll('a'); 
+//assign nav Item value from siteContent object
+navItem[0].textContent=siteContent.nav["nav-item-1"];
+navItem[1].textContent=siteContent.nav["nav-item-2"];
+navItem[2].textContent=siteContent.nav["nav-item-3"];
+navItem[3].textContent=siteContent.nav["nav-item-4"];
+navItem[4].textContent=siteContent.nav["nav-item-5"];
+navItem[5].textContent=siteContent.nav["nav-item-6"];
+console.log(document);
+
+//select h1 tag and assign textContent 
+let h1=document.querySelector('h1');
+// h1.textContent= siteContent.cta.h1;
+//split by space
+h1.textContent = 'Dom';
+let secondh1 = document.createElement('h1');
+secondh1.textContent = 'is';
+h1.appendChild(secondh1);
+
+let thirdh1 = document.createElement('h1');
+thirdh1.textContent = 'Awesome';
+h1.appendChild(thirdh1);
+
+//select button in cta-text class
+let startButton=document.querySelector('.cta-text button');
+startButton.textContent=siteContent.cta.button;
+
+//select img id cta-img
+let ctaImg=document.getElementById('cta-img');
+ctaImg.src=siteContent.cta["img-src"];
+ctaImg.alt="Image of a code snippet.";
+
+//select all h1 from  class main-content top-content text-content list - this has =>> Feature and About sections//
+
+let topContenth4=document.querySelectorAll('.main-content .top-content .text-content h4')
+//Assign value from main-content key-value property
+topContenth4[0].textContent= siteContent["main-content"]["features-h4"];
+topContenth4[1].textContent= siteContent["main-content"]["about-h4"];
+
+//select all p from class main-content top-content text-content list - this has the detail para for=>> Feature and About sections//
+
+let topContentp=document.querySelectorAll('.main-content .top-content .text-content p')
+topContentp[0].textContent=siteContent["main-content"]["features-content"];
+topContentp[1].textContent=siteContent["main-content"]["about-content"];
+
+//select the middle image 
+let midImg=document.getElementById('middle-img');
+midImg.src=siteContent["main-content"]["middle-img-src"];
+/*Bottom Content*/
+/* select the bottom content h4 and assign text*/
+let bottomContentH4 = document.querySelectorAll('.main-content .bottom-content .text-content h4');
+bottomContentH4[0].textContent = siteContent["main-content"]["services-h4"];
+bottomContentH4[1].textContent = siteContent["main-content"]["product-h4"];
+bottomContentH4[2].textContent = siteContent["main-content"]["vision-h4"];
+
+/* select the bottom content para and assign text*/
+let bottomContentp = document.querySelectorAll('.main-content .bottom-content .text-content p');
+
+bottomContentp[0].textContent = siteContent["main-content"]["services-content"];
+bottomContentp[1].textContent = siteContent["main-content"]["product-content"];
+bottomContentp[2].textContent = siteContent["main-content"]["vision-content"];
+
+//contact info - select h4 from contact class and assign value
+
+let contacth4=document.querySelector('.contact h4');
+contacth4.textContent = siteContent["contact"]["contact-h4"];
+
+// contact info - select p from contact class and assign value
+
+let contactp=document.querySelectorAll('.contact p');
+contactp[0].textContent=siteContent.contact.address;
+contactp[1].textContent=siteContent.contact.phone;
+contactp[2].textContent=siteContent.contact.email;
+ 
+
+//footer info - select footer p
+
+let footerp=document.querySelector('footer p');
+footerp.textContent=siteContent.footer.copyright;
+
+// Change the color of the navigation text to be green.
+navItem.forEach((item)=>{
+  item.style.color="green";
+})
+// Utilize `.appendChild()` and `.prepend()` to add two new items to the navigation system. You can call them whatever you want.
+const newelement1=document.createElement('a');
+newelement1.textContent="Goals";
+newelement1.style.color="green";
+
+const newelement2=document.createElement('a');
+newelement2.textContent="Home";
+newelement2.style.color="green";
+
+/*select nav */ 
+const nav=document.querySelector('nav');
+nav.appendChild(newelement1);
+/* Added as the first nav element */
+nav.prepend(newelement2);
+
