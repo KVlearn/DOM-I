@@ -24,16 +24,19 @@ msHundreds.textContent='0';
 msTens.textContent='0';
 start.onclick = startTimer;
 reset.onclick = resetTimer;
-var timer;
+let timer;
 function startTimer(){
 timer = setInterval(runTimer,10) /*perform runTimer function at interval of every 10ms*/
 }
 
 function resetTimer(){
-    secondTens.innerText="-"; /*assign as string, as its a const*/
-    secondOnes.innerText="-";
-    msHundreds.innerText="-";
-    msTens.innerText="-";
+    secondTens.innerText="0"; /*assign as string, as its a const*/
+    secondOnes.innerText="0";
+    msHundreds.innerText="0";
+    msTens.innerText="0";
+    countermsec = 0;
+    countersec=0;
+    maxsec=0;
 }
 
 /*Note,second parameter is in millisecond (ie 1s=1000ms)*/

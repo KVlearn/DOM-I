@@ -26,6 +26,4 @@ button{
   font-size: 1.2rem;
   border-radius: 10%;
 }
-button:disabled {
-  background: sandybrown;
-}
+ 
